@@ -230,7 +230,7 @@ def send_all():
                     if email is not None:
                         email.connection = connection
                         ensure_message_id(email)
-                        email.send()
+                        email.send(message.to_addresses)
 
                         # connection can't be stored in the MessageLog
                         email.connection = None

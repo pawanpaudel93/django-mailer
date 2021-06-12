@@ -91,6 +91,7 @@ def email_to_db(email):
     # encode to store in a unicode field. finally we encode back to make sure
     # we only try to insert unicode strings into the db, since we use a
     # TextField
+    email.__dict__['request'] = None
     return base64_encode(pickle.dumps(email)).decode('ascii')
 
 
